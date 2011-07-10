@@ -1,4 +1,4 @@
-Titanium.include("db/staticdb.js");
+
 Titanium.include("tools/builder.js");
 
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
@@ -26,7 +26,7 @@ buildTab({
 buildTab({
 	win: {
 		title: "Home",
-		url: "tabs/location.js"
+		url: "tabs/home.js"
 	},
 	tab: {
 		icon: "KS_nav_views.png",
@@ -38,7 +38,7 @@ buildTab({
 buildTab({
 	win: {
 		title: "Categories",
-		url: "tabs/location.js"
+		url: "tabs/categories.js"
 	},
 	tab: {
 		icon: "KS_nav_views.png",
