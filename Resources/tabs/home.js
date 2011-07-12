@@ -3,6 +3,7 @@ var win = Titanium.UI.currentWindow;
 
 var getData = function(hotel){
 	var hotelData = {
+		id: hotel.id,
 		hotelname: hotel.name,
 		hasChild:true,
 		height: "auto"
@@ -67,3 +68,13 @@ var tableview = Titanium.UI.createTableView({
 	filterAttribute: 'hotelname',
 });
 win.add(tableview);
+tableview.addEventListener("click", function(e) {
+	var win = Titanium.UI.createWindow({
+		url:"home/hotel_detail.js",
+		title: e.rowData.hotelname,
+		backgroundColor: "stripped",
+		id:e.rowData.id
+	});
+	win.hideTabBar();
+	Titanium.UI.currentTab.open(win, {animated:true});
+});
