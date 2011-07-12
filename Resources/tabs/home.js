@@ -1,20 +1,59 @@
 Titanium.include("../db/staticdb.js");
 var win = Titanium.UI.currentWindow;
 
+var getData = function(hotel){
+	var hotelData = {
+		hotelname: hotel.name,
+		hasChild:true,
+		height: "auto"
+	};
+
+	if(hotel.header) {
+		hotelData.header=hotel.header
+	}
+	return hotelData;
+}
+
+
 var data = [];
 for (var i=0; i < hotels.length; i++) {
-	if(hotels[i].header) {
-		data.push({
-			title: hotels[i].name,
-			hasChild: true,
-			header: hotels[i].header
-		});
-	} else {
-		data.push({
-			title: hotels[i].name,
-			hasChild: true
-		});
-	}
+	
+	var hotelRow = Titanium.UI.createTableViewRow(getData(hotels[i]));
+	Ti.API.info(hotels[i].thumbnail);
+	var thumb = Ti.UI.createImageView({
+		image: hotels[i].thumbnail,
+		height: 60,
+		width: 60,
+		top: 0,
+		left: 0
+	});
+	var name = Ti.UI.createLabel({
+		text:hotels[i].name,		
+		font: {
+			fontSize:16,
+			fontWeight:'bold'
+		},
+		textAlign:'left',
+		height:16,
+		width: 'auto',
+		left: 65,
+		top: 2
+	});
+	var addrs = Ti.UI.createLabel({
+		text:hotels[i].address,
+		width:'auto',
+		color:'#666666',
+		font: {
+			fontSize:12
+		},
+		height: "auto",
+		left:65,
+		top:20
+	});
+	hotelRow.add(thumb);
+	hotelRow.add(name);
+	hotelRow.add(addrs);
+	data.push(hotelRow);
 }
 
 var search = Titanium.UI.createSearchBar({
@@ -25,37 +64,6 @@ var search = Titanium.UI.createSearchBar({
 var tableview = Titanium.UI.createTableView({
 	data:data,
 	search:search,
-	filterAttribute:'title'
+	filterAttribute: 'hotelname',
 });
 win.add(tableview);
-// var search = Titanium.UI.createSearchBar({
-	// barColor:'#000',
-	// showCancel:true,
-	// height:43,
-	// top:0
-// });
-// 
-// // create table view
-// var hotelsTable = Titanium.UI.createTableView({
-	// data:[],
-	// scrollable:true,
-	// top:30
-// });
-// 
-// win.add(search);
-// win.add(hotelsTable);
-// 
-// search.addEventListener('change', function(e)
-// {
-	// matchedHotels = searchByName(search.value);
-	// hotelsTable.data=[];
-	// for (var i = matchedHotels.length - 1; i >= 0; i--){
-    	// hotelsTable.appendRow({title:matchedHotels[i].name}); 
-	// };
-// 	
-	// Titanium.API.info('search bar: you type ' + e.value + ' act val ' + search.value);
-// 
-// });
-
-
-

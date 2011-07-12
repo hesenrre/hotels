@@ -47,5 +47,6 @@ buildTab({
 	container: tabGroup
 });
 
+tabGroup.setActiveTab(1);
 // open tab group
 tabGroup.open();
