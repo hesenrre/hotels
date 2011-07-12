@@ -9,7 +9,7 @@ hotels=[{
 	telephone:'52767400',
 	latitude:19.40019,
 	longitude:-99.170778,
-	image:'../images/INS_fiestainn_ciudadmexico_hotel.jpg',
+	image:'/images/INS_fiestainn_ciudadmexico_hotel.jpg',
 	thumbnail:'../images/INS_fiestainn_ciudadmexico_hotel.jpg',
 	paymethods:['VISA','MASTERCARD'],
 	prices:[{
@@ -30,7 +30,7 @@ hotels=[{
 	telephone:'11234567',
 	latitude:19.4368,
 	longitude:-99.1847,
-	image:'../images/residencialpolanco.png',
+	image:'/images/residencialpolanco.png',
 	thumbnail:'../images/residencialpolanco.png',
 	paymethods:['VISA','MASTERCARD'],
 	prices:[{
@@ -41,6 +41,15 @@ hotels=[{
 		price:500
 	}]
 }];
+
+var searchById = function(id){
+	for(var i=0; i < hotels.length; i++){
+		if(hotels[i].id === id){
+			return hotels[i];
+		}
+	}
+	return null;
+}
 
 var searchByName = function(name){
 	Titanium.API.log(name);
