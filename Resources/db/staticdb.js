@@ -1,3 +1,4 @@
+var FACTOR = 0.01862;
 hotels=[{	name:'Residencia Polanco',
 			stars:3,
 			pool:false,
@@ -23,3 +24,14 @@ var searchByName = function(name){
 	return li;
 };
 
+
+var searchNearBy = function(point,delta){
+	li = [];
+	for (var i=0; i < hotels.length; i++) {
+		var d=(Math.sqrt(((point.latitude -hotels[i].latitude )^2 ) + ((point.longitude - hotels[i].longitude)^2 )  ) * FACTOR) ;		
+		if(  d <= delta ){			
+			li.push(hotels[i]);
+		}
+	}
+	return li;
+};
