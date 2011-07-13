@@ -19,6 +19,12 @@ if (isIPhone3_2_Plus())
 Titanium.Geolocation.accuracy = Titanium.Geolocation.ACCURACY_HUNDRED_METERS;
 Titanium.Geolocation.distanceFilter = 10;
 
+if (typeof(Number.prototype.toRad) === "undefined") {
+  Number.prototype.toRad = function() {
+    return this * Math.PI / 180;
+  }
+}
+
 
 
 var mapview = Titanium.Map.createView({
@@ -49,8 +55,8 @@ var activateCurrentLocListener = function() {
 var drawRegion = function(){
     
 	mapview.setLocation(currentRegion);
-	var matchedHotels = searchNearBy();
-	for (var i=0; i < matchedHotelsngth; i++) {
+	var matchedHotels = searchNearBy(currentRegion,2);
+	for (var i=0; i < matchedHotels.length; i++) {
 		var currentParams = {
 			latitude:matchedHotels[i].latitude,
 			longitude:matchedHotels[i].longitude,
@@ -58,8 +64,7 @@ var drawRegion = function(){
 			animate:true			
 		};
 		mapview.addAnnotation(Titanium.Map.createAnnotation(currentParams));
-	};
-		
+	};		
 } 
 
 
@@ -83,6 +88,7 @@ function isIPhone3_2_Plus()
 
 	   	
 win.add(mapview);
+//searchNearBy({latitude:19.398136, longitude:-99.168373} ,2);
 updateLocation();
 
 
