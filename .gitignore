@@ -1,5 +1,10 @@
 tmp
+*.swp
 *.class
 *.pyc
 *.pyo
 build/iphone/build/*
+build
+build.log
+.DS_Store
+.settings/com.appcelerator.titanium.core.prefs
