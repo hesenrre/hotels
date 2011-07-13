@@ -1,4 +1,4 @@
-var FACTOR = 0.01862;
+var FACTOR = 0.0093;
 hotels=[{
 	name:'Fiesta Inn Viaducto',
 	header: 'F',
@@ -54,12 +54,35 @@ var searchByName = function(name){
 
 
 var searchNearBy = function(point,delta){
-	li = [];
+	liNear = [];
+	var pushing = "";
+	var R = 6371; // km
 	for (var i=0; i < hotels.length; i++) {
-		var d=(Math.sqrt(((point.latitude -hotels[i].latitude )^2 ) + ((point.longitude - hotels[i].longitude)^2 )  ) * FACTOR) ;		
-		if(  d <= delta ){			
-			li.push(hotels[i]);
+		
+	var lat2 = hotels[i].latitude;
+	var lat1 =  point.latitude;
+	var lon1 = point.longitude;
+	var lon2 = hotels[i].longitude;
+	var dLat = (lat2-lat1).toRad();
+	var dLon = (lon2-lon1).toRad();
+	var lat1 = lat1.toRad();
+	var lat2 = lat2.toRad();
+
+	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+	var d = R * c;
+		
+		
+		
+			
+		Ti.API.info("\n\n ********************currLatitude = " + point.latitude +", currLong = " + point.longitude  + " , d = " + d);
+		Ti.API.info("\n\n ********************pointLatitude = " +hotels[i].latitude +", currLong = " + hotels[i].longitude + " , d = " + d);	
+		if(  d <= delta ){
+			pushing = pushing +" puching widh d = " + d;			
+			liNear.push(hotels[i]);
 		}
 	}
-	return li;
+	Ti.API.info("pushing = " + pushing);
+	return liNear;
 };
