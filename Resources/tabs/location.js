@@ -57,13 +57,15 @@ var drawRegion = function(){
 	mapview.setLocation(currentRegion);
 	var matchedHotels = searchNearBy(currentRegion,2);
 	for (var i=0; i < matchedHotels.length; i++) {
-		var currentParams = {
-			latitude:matchedHotels[i].latitude,
-			longitude:matchedHotels[i].longitude,
-			title:matchedHotels.name,			
-			animate:true			
-		};
-		mapview.addAnnotation(Titanium.Map.createAnnotation(currentParams));
+		var annot = Titanium.Map.createAnnotation({
+			latitude:matchedHotels[i].hotel.latitude,
+	    	longitude:matchedHotels[i].hotel.longitude,
+	    	title:matchedHotels[i].hotel.name,
+		    subtitle: matchedHotels[i].distance +' km',
+	    	pincolor:Titanium.Map.ANNOTATION_RED,
+	    	animate:true,
+		});
+			mapview.addAnnotation(annot);
 	};		
 } 
 
@@ -88,9 +90,6 @@ function isIPhone3_2_Plus()
 
 	   	
 win.add(mapview);
-//searchNearBy({latitude:19.398136, longitude:-99.168373} ,2);
 updateLocation();
-
-
 
 
