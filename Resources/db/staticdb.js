@@ -91,7 +91,7 @@ var searchNearBy = function(point,delta){
 		Ti.API.info("\n\n ********************pointLatitude = " +hotels[i].latitude +", currLong = " + hotels[i].longitude + " , d = " + d);	
 		if(  d <= delta ){
 			pushing = pushing +" puching widh d = " + d;			
-			liNear.push(hotels[i]);
+			liNear.push({hotel:hotels[i],distance:d.toFixed(2)});
 		}
 	}
 	Ti.API.info("pushing = " + pushing);
