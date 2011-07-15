@@ -3,7 +3,7 @@ hotels=[
 {
 	id: 6,
 	name:'Camino Real - Mexico City',
-	header: 'F',
+	header: 'C',
 	stars:4,
 	pool:false,
 	parking:true,
@@ -25,7 +25,6 @@ hotels=[
 {
 	id: 10,
 	name:'Casa Castelar',
-	header: 'F',
 	stars:3,
 	pool:false,
 	parking:true,
@@ -48,7 +47,6 @@ hotels=[
 {
 	id: 13,
 	name:'Cityexpress Ciudad de Mexico Insurgentes Sur',
-	header: 'F',
 	stars:2,
 	pool:false,
 	parking:true,
@@ -71,7 +69,6 @@ hotels=[
 {
 	id: 11,
 	name:'Citysuites Ciudad de Mexico Anzures',
-	header: 'F',
 	stars:3,
 	pool:false,
 	parking:true,
@@ -89,12 +86,50 @@ hotels=[
 		room:'double',
 		price:1800
 	}]
-},
-
-{
+},{
+	id: 3,
+	name:'Crowne Plaza Hotel',
+	stars:3,
+	pool:false,
+	parking:true,
+	address:'Dakota #95 Esq. Altadena, Colonia Napoles',
+	telephone:'52767400',
+	latitude:19.396112,
+	longitude:-99.174442,
+	image:'/images/cp_wtc.jpg',
+	thumbnail:'../images/cp_wtc.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1400
+	},{
+		room:'double',
+		price:1500
+	}]
+ },{
+	id: 2,
+	name:'Fiesta Inn Centro Historico',
+	header: 'F',
+	stars:3,
+	pool:false,
+	parking:true,
+	address:'Av. Juárez 76 / José Azueta 27 C Col. Centro',
+	telephone:'52767400',
+	latitude:19.435003,
+	longitude:-99.146832,
+	image:'/images/ALA_fiestainn_ciudadmexico_hotel.jpg',
+	thumbnail:'../images/ALA_fiestainn_ciudadmexico_hotel.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1400
+	},{
+		room:'double',
+		price:1500
+	}]
+},{
 	id: 12,
 	name:'Fiesta Inn Insurgentes Sur',
-	header: 'F',
 	stars:4,
 	pool:false,
 	parking:true,
@@ -117,7 +152,6 @@ hotels=[
 {
 	id: 1,
 	name:'Fiesta Inn Viaducto',
-	header: 'F',
 	stars:3,
 	pool:false,
 	parking:true,
@@ -135,12 +169,31 @@ hotels=[
 		room:'double',
 		price:1500
 	}]
-}
-,
-{
+},{
+id: 4,
+	name:'Holiday Inn Express WTC',
+	header: 'H',
+	stars:3,
+	pool:false,
+	parking:true,
+	address:'Dakota #95 Col. Napoles',
+	telephone:'52767400',
+	latitude:19.395566,
+	longitude:-99.174775,
+	image:'/images/hie_wtc.jpg',
+	thumbnail:'../images/hie_wtc.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1400
+	 },{
+		 room:'double',
+		 price:1500
+	 }]
+},{
 	id: 8,
 	name:'JW Marriott Hotel Mexico City',
-	header: 'F',
+	header: 'J',
 	stars:5,
 	pool:false,
 	parking:true,
@@ -163,7 +216,7 @@ hotels=[
 {
 	id: 3,
 	name:'Las Suites',
-	header: 'F',
+	header: 'L',
 	stars:3,
 	pool:false,
 	parking:true,
@@ -185,7 +238,7 @@ hotels=[
 {
 	id: 5,
 	name:'Nikko Mexico',
-	header: 'F',
+	header: 'N',
 	stars:4,
 	pool:false,
 	parking:true,
@@ -207,7 +260,7 @@ hotels=[
 {
 	id: 9,
 	name:'Presidente InterContinental Mexico City',
-	header: 'F',
+	header: 'P',
 	stars:5,
 	pool:false,
 	parking:true,
@@ -225,9 +278,8 @@ hotels=[
 		room:'double',
 		price:1500
 	}]
-}
-,{
-	id: 2,
+},{
+	id: 7,
 	name:'Residencia Polanco',
 	header: 'R',
 	stars:3,
@@ -251,7 +303,7 @@ hotels=[
 {
 	id: 7,
 	name:'W Mexico City',
-	header: 'F',
+	header: 'W',
 	stars:5,
 	pool:false,
 	parking:true,
@@ -274,7 +326,6 @@ hotels=[
 {
 	id: 4,
 	name:'Wyndham Garden Mexico City Polanco',
-	header: 'F',
 	stars:3,
 	pool:false,
 	parking:true,
@@ -292,13 +343,7 @@ hotels=[
 		room:'double',
 		price:1300
 	}]
-}
-
-
-
-
-
-];
+}];
 
 var searchById = function(id){
 	for(var i=0; i < hotels.length; i++){

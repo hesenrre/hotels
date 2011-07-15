@@ -6,7 +6,8 @@ var getData = function(hotel){
 		id: hotel.id,
 		hotelname: hotel.name,
 		hasChild:true,
-		height: "auto"
+		height: "auto",
+
 	};
 
 	if(hotel.header) {

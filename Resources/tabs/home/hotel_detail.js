@@ -1,5 +1,6 @@
 Titanium.include("../../db/staticdb.js");
 var win = Ti.UI.currentWindow;
+win.showNavBar();
 
 var currentHotel = searchById(win.id);
 
@@ -26,6 +27,15 @@ var labAddrs = Titanium.UI.createLabel({
 	textAlign: "left",
 	height:16
 });
+
+var stars = Titanium.UI.createImageView({
+	image: "/images/3star.png",
+	top: 170,
+	left: 50,
+	height: 16
+});
+
+scrollView.add(stars);
 
 var addrs = Titanium.UI.createTextArea({
     value:currentHotel.address,

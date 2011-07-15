@@ -1,7 +1,9 @@
+var win = Titanium.UI.currentWindow;
+
 Titanium.include("../db/staticdb.js");
 
+var currentDistance = 2;
 var FACTOR = 0.01862;
-var win = Titanium.UI.currentWindow;
 var currentRegion = null;
 var myLocationAnn = null;
 
@@ -25,13 +27,50 @@ if (typeof(Number.prototype.toRad) === "undefined") {
   }
 }
 
+var km2 = Titanium.UI.createButton({
+	title:"2 km",
+	height: 11,
+	width: "auto"
+});
+
+var km5 = Titanium.UI.createButton({
+	title:"5 km",
+	height: 11,
+	width: "auto"
+});
+
+var km10 = Titanium.UI.createButton({
+	title:"10 km",
+	height: 11,
+	width: "auto"
+});
+
+var back = Titanium.UI.createButton({
+	title:"<",
+	height: 11,
+	width: "auto"
+});
+
+var flexSpace = Titanium.UI.createButton({
+	systemButton:Titanium.UI.iPhone.SystemButton.FLEXIBLE_SPACE
+});
+
+var toolbar = Titanium.UI.createToolbar({
+	items:[back, flexSpace, km2, flexSpace, km5, flexSpace, km10, flexSpace],
+	bottom:0,
+	height: 15,
+	borderTop:true,
+	borderBottom:false,
+	translucent:true,
+	barColor:'#999'
+});	
 
 
 var mapview = Titanium.Map.createView({
 	mapType: Titanium.Map.STANDARD_TYPE,	
 	animate:true,
 	regionFit:true,
-	userLocation:true				
+	userLocation:true
 });
 
 
@@ -53,9 +92,8 @@ var activateCurrentLocListener = function() {
 };
 
 var drawRegion = function(){
-    
 	mapview.setLocation(currentRegion);
-	var matchedHotels = searchNearBy(currentRegion,2);
+	var matchedHotels = searchNearBy(currentRegion, currentDistance);
 	for (var i=0; i < matchedHotels.length; i++) {
 		var annot = Titanium.Map.createAnnotation({
 			latitude:matchedHotels[i].hotel.latitude,
@@ -63,6 +101,7 @@ var drawRegion = function(){
 	    	title:matchedHotels[i].hotel.name,
 		    subtitle: matchedHotels[i].distance +' km',
 	    	pincolor:Titanium.Map.ANNOTATION_RED,
+	    	rightButton: Titanium.UI.iPhone.SystemButton.DISCLOSURE,
 	    	animate:true,
 		});
 			mapview.addAnnotation(annot);
@@ -88,8 +127,31 @@ function isIPhone3_2_Plus()
 	return false;
 }
 
-	   	
+back.addEventListener("click", function(e){
+	win.container.setActiveTab(1);
+});
+
+km2.addEventListener("click", function(e){
+	mapview.removeAllAnnotations();
+	currentDistance = 2;
+	currentRegion.latitudeDelta = currentRegion.longitudeDelta = FACTOR,
+	drawRegion();
+});
+
+km5.addEventListener("click", function(e){
+	mapview.removeAllAnnotations();
+	currentDistance = 5;
+	currentRegion.latitudeDelta = currentRegion.longitudeDelta = FACTOR * 5,
+	drawRegion();
+});
+
+km10.addEventListener("click", function(e){
+	mapview.removeAllAnnotations();
+	currentDistance = 10;
+	currentRegion.latitudeDelta = currentRegion.longitudeDelta = FACTOR * 10,
+	drawRegion();
+});
+
 win.add(mapview);
+win.add(toolbar);
 updateLocation();
-
-

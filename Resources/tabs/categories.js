@@ -1,8 +1,19 @@
 Titanium.include("../db/staticdb.js");
 var win = Titanium.UI.currentWindow;
 
+var data = [{
+	title:'Stars',
+	hasChild: true
+},{
+	title:'With pool',
+	hasChild: true
+},{
+	title:'With parking',
+	hasChild: true
+}];
+
 var categoriesTable = Titanium.UI.createTableView({
-	data:[{title:'Stars'},{title:'Swiming Pool'},{title:'No Swiming Pool'},{title:'Parking'},{title:'No parking'}],
+	data:data,
 	scrollable:true,
 	top:0
 });

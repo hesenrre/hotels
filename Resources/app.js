@@ -13,12 +13,13 @@ var tabGroup = Titanium.UI.createTabGroup();
 //
 buildTab({
 		win: {
-			title: "My location",
-			url: "tabs/location.js"
+			title: "Near by",
+			url: "tabs/location.js",
+			tabBarHidden: true
 		},
 		tab: {
 			icon: "KS_nav_views.png",
-			title: "My Location"
+			title: "Near By"
 		},
 		container: tabGroup
 });
@@ -49,4 +50,6 @@ buildTab({
 
 tabGroup.setActiveTab(1);
 // open tab group
-tabGroup.open();
+tabGroup.open({
+	transition:Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+});
