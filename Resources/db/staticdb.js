@@ -1,5 +1,120 @@
 var FACTOR = 0.0093;
-hotels=[{
+hotels=[
+{
+	id: 6,
+	name:'Camino Real - Mexico City',
+	header: 'F',
+	stars:4,
+	pool:false,
+	parking:true,
+	address:'Mariano Escobedo 700, Col Anzures Mexico City, DF 11590 México',
+	telephone:'533776655',
+	latitude:19.427663,
+	longitude:-99.17941,
+	image:'/images/Camino_real.jpg',
+	thumbnail:'../images/Camino_real.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:2157
+	},{
+		room:'double',
+		price:2500
+	}]
+},
+{
+	id: 10,
+	name:'Casa Castelar',
+	header: 'F',
+	stars:3,
+	pool:false,
+	parking:true,
+	address:'Emilio Castelar # 34 (esquina Galileo) Colonia Polanco Mexico City, DF 11560 México',
+	telephone:'12376655',
+	latitude:19.429747,
+	longitude:-99.196694,
+	image:'/images/Casa_castelar.jpg',
+	thumbnail:'../images/Casa_castelar.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1307
+	},{
+		room:'double',
+		price:1500
+	}]
+},
+
+{
+	id: 13,
+	name:'Cityexpress Ciudad de Mexico Insurgentes Sur',
+	header: 'F',
+	stars:2,
+	pool:false,
+	parking:true,
+	address:'Insurgentes Sur 1581 Mexico City, DF México',
+	telephone:'12376655',
+	latitude:19.364403,
+	longitude:-99.181985,
+	image:'/images/Cityexpress_insurgentes_sur.jpg',
+	thumbnail:'../images/Cityexpress_insurgentes_sur.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:906
+	},{
+		room:'double',
+		price:1100
+	}]
+},
+
+{
+	id: 11,
+	name:'Citysuites Ciudad de Mexico Anzures',
+	header: 'F',
+	stars:3,
+	pool:false,
+	parking:true,
+	address:'Leibniz 120 Col Anzures Mexico City, DF 11590 México',
+	telephone:'12376655',
+	latitude:19.42913,
+	longitude:-99.178251,
+	image:'/images/Citisuites.jpg',
+	thumbnail:'../images/Citisuites.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1547
+	},{
+		room:'double',
+		price:1800
+	}]
+},
+
+{
+	id: 12,
+	name:'Fiesta Inn Insurgentes Sur',
+	header: 'F',
+	stars:4,
+	pool:false,
+	parking:true,
+	address:'Mercaderes #20 Col San Jose Insurgentes Mexico City, DF 03900 México',
+	telephone:'12376655',
+	latitude:19.363988,
+	longitude:-99.18339,
+	image:'/images/Fiesta_inn_insurgentes_sur.jpg',
+	thumbnail:'../images/Fiesta_inn_insurgentes_sur.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1049
+	},{
+		room:'double',
+		price:1300
+	}]
+},
+
+{
 	id: 1,
 	name:'Fiesta Inn Viaducto',
 	header: 'F',
@@ -20,7 +135,98 @@ hotels=[{
 		room:'double',
 		price:1500
 	}]
-},{
+}
+,
+{
+	id: 8,
+	name:'JW Marriott Hotel Mexico City',
+	header: 'F',
+	stars:5,
+	pool:false,
+	parking:true,
+	address:'Andres Bello No 29 Mexico City, DF 11560 México',
+	telephone:'12376655',
+	latitude:19.426702,
+	longitude:-99.194977,
+	image:'/images/JW_marriot_mexico.jpg',
+	thumbnail:'../images/JW_marriot_mexico.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1641
+	},{
+		room:'double',
+		price:2000
+	}]
+},
+
+{
+	id: 3,
+	name:'Las Suites',
+	header: 'F',
+	stars:3,
+	pool:false,
+	parking:true,
+	address:'Campos Eliseos 470 Mexico City, DF 11560 México',
+	telephone:'52776655',
+	latitude:19.430577,
+	longitude:-99.205395,
+	image:'/images/Las_Suites.jpg',
+	thumbnail:'../images/Las_Suites.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1383
+	},{
+		room:'double',
+		price:1500
+	}]
+},
+{
+	id: 5,
+	name:'Nikko Mexico',
+	header: 'F',
+	stars:4,
+	pool:false,
+	parking:true,
+	address:'Campos Eliseos 204 Colonia Polanco Mexico City, DF 11560 México',
+	telephone:'533776655',
+	latitude:19.427744,
+	longitude:-99.192617,
+	image:'/images/Nikko_mexico.jpg',
+	thumbnail:'../images/Nikko_mexico.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:2157
+	},{
+		room:'double',
+		price:2500
+	}]
+},
+{
+	id: 9,
+	name:'Presidente InterContinental Mexico City',
+	header: 'F',
+	stars:5,
+	pool:false,
+	parking:true,
+	address:'Campos Eliseos 218 Mexico City, DF 11560 México',
+	telephone:'12376655',
+	latitude:19.427238,
+	longitude:-99.193947,
+	image:'/images/Presidente_intercontinental.jpg',
+	thumbnail:'../images/Presidente_intercontinental.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1395
+	},{
+		room:'double',
+		price:1500
+	}]
+}
+,{
 	id: 2,
 	name:'Residencia Polanco',
 	header: 'R',
@@ -41,7 +247,58 @@ hotels=[{
 		room:'double',
 		price:500
 	}]
-}];
+},
+{
+	id: 7,
+	name:'W Mexico City',
+	header: 'F',
+	stars:5,
+	pool:false,
+	parking:true,
+	address:'Campos Eliseos 252 Chapultepec Mexico City, DF 11560 México',
+	telephone:'533776655',
+	latitude:19.427633,
+	longitude:-99.194875,
+	image:'/images/W_mexico_city.jpg',
+	thumbnail:'../images/W_mexico_city.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1641
+	},{
+		room:'double',
+		price:2000
+	}]
+}
+,     
+{
+	id: 4,
+	name:'Wyndham Garden Mexico City Polanco',
+	header: 'F',
+	stars:3,
+	pool:false,
+	parking:true,
+	address:'Leon Tolstoi 22 Mexico City, DF 11590 México',
+	telephone:'52776655',
+	latitude:19.425235,
+	longitude:-99.176695,
+	image:'/images/Wyndham_garden.jpg',
+	thumbnail:'../images/Wyndham_garden.jpg',
+	paymethods:['VISA','MASTERCARD'],
+	prices:[{
+		room:'single',
+		price:1063
+	},{
+		room:'double',
+		price:1300
+	}]
+}
+
+
+
+
+
+];
 
 var searchById = function(id){
 	for(var i=0; i < hotels.length; i++){
