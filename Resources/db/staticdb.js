@@ -365,35 +365,34 @@ var searchByName = function(name){
 	return li;
 };
 
-
-var searchNearBy = function(point,delta){
+var searchNearBy = function(point,delta) {
 	liNear = [];
 	var pushing = "";
 	var R = 6371; // km
 	for (var i=0; i < hotels.length; i++) {
-		
-	var lat2 = hotels[i].latitude;
-	var lat1 =  point.latitude;
-	var lon1 = point.longitude;
-	var lon2 = hotels[i].longitude;
-	var dLat = (lat2-lat1).toRad();
-	var dLon = (lon2-lon1).toRad();
-	var lat1 = lat1.toRad();
-	var lat2 = lat2.toRad();
 
-	var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
-	var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-	var d = R * c;
-		
-		
-		
-			
+		var lat2 = hotels[i].latitude;
+		var lat1 =  point.latitude;
+		var lon1 = point.longitude;
+		var lon2 = hotels[i].longitude;
+		var dLat = (lat2-lat1).toRad();
+		var dLon = (lon2-lon1).toRad();
+		var lat1 = lat1.toRad();
+		var lat2 = lat2.toRad();
+
+		var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+		Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		var d = R * c;
+
 		Ti.API.info("\n\n ********************currLatitude = " + point.latitude +", currLong = " + point.longitude  + " , d = " + d);
-		Ti.API.info("\n\n ********************pointLatitude = " +hotels[i].latitude +", currLong = " + hotels[i].longitude + " , d = " + d);	
-		if(  d <= delta ){
-			pushing = pushing +" puching widh d = " + d;			
-			liNear.push({hotel:hotels[i],distance:d.toFixed(2)});
+		Ti.API.info("\n\n ********************pointLatitude = " +hotels[i].latitude +", currLong = " + hotels[i].longitude + " , d = " + d);
+		if(  d <= delta ) {
+			pushing = pushing +" puching widh d = " + d;
+			liNear.push({
+				hotel:hotels[i],
+				distance:d.toFixed(2)
+			});
 		}
 	}
 	Ti.API.info("pushing = " + pushing);
