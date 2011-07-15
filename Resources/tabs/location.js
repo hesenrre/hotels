@@ -102,6 +102,7 @@ var drawRegion = function(){
 		    subtitle: matchedHotels[i].distance +' km',
 	    	pincolor:Titanium.Map.ANNOTATION_RED,
 	    	rightButton: Titanium.UI.iPhone.SystemButton.DISCLOSURE,
+	    	id: matchedHotels[i].hotel.id,
 	    	animate:true,
 		});
 			mapview.addAnnotation(annot);
@@ -150,6 +151,27 @@ km10.addEventListener("click", function(e){
 	currentDistance = 10;
 	currentRegion.latitudeDelta = currentRegion.longitudeDelta = FACTOR * 10,
 	drawRegion();
+});
+
+
+mapview.addEventListener("click", function(e){
+	if(e.clicksource === 'rightButton') {
+		alert("id:"+e.annotation.id);
+		
+		var style = Ti.UI.iPhone.MODAL_TRANSITION_STYLE_PARTIAL_CURL;
+		var presentation = Ti.UI.iPhone.MODAL_PRESENTATION_FULLSCREEN;
+		var w = Ti.UI.createWindow({
+			url: "map/hotel_detail.js",
+			currentPin: {map: mapview, annot: e.annotation}
+		});
+
+		w.open({
+			modal:true,
+			modalTransitionStyle:style,
+			modalStyle:presentation,
+			navBarHidden:true
+		});
+	}
 });
 
 win.add(mapview);
