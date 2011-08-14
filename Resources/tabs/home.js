@@ -71,7 +71,7 @@ var tableview = Titanium.UI.createTableView({
 win.add(tableview);
 tableview.addEventListener("click", function(e) {
 	var win = Titanium.UI.createWindow({
-		url:"home/hotel_detail.js",
+		url:"/tabs/home/hotel_detail.js",
 		title: e.rowData.hotelname,
 		backgroundColor: "stripped",
 		id:e.rowData.id

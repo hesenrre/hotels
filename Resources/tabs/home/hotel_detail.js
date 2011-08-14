@@ -1,6 +1,8 @@
 Titanium.include("../../db/staticdb.js");
 var win = Ti.UI.currentWindow;
-win.showNavBar();
+if(Ti.Platform.name != 'android'){
+    win.showNavBar();
+}
 
 var currentHotel = searchById(win.id);
 
@@ -87,20 +89,23 @@ var labMap = Titanium.UI.createLabel({
 	height:16
 });
 
-var map = Titanium.Map.createView({
-	mapType: Titanium.Map.STANDARD_TYPE,
-    region: {latitude:currentHotel.latitude, longitude:currentHotel.longitude, 
-            latitudeDelta:0.003, longitudeDelta:0.003},
-    animate:true,
-    regionFit:true,
-    userLocation:true,
-    height: 100,
-    width: "85%",
-    top: 330,
-    borderWidth: 2,
-	borderColor:'#bbb',
-    borderRadius:5
-});
+if(Ti.Platform.name != 'android'){
+    var map = Titanium.Map.createView({
+        mapType: Titanium.Map.STANDARD_TYPE,
+        region: {latitude:currentHotel.latitude, longitude:currentHotel.longitude, 
+                latitudeDelta:0.003, longitudeDelta:0.003},
+        animate:true,
+        regionFit:true,
+        userLocation:true,
+        height: 100,
+        width: "85%",
+        top: 330,
+        borderWidth: 2,
+        borderColor:'#bbb',
+        borderRadius:5
+    });
+    scrollView.add(map);
+}
 
 var mapDet = Titanium.UI.createButton({
     backgroundImage: "/images/trans_bg.png",
@@ -123,7 +128,6 @@ scrollView.add(addrs);
 scrollView.add(labTel);
 scrollView.add(tel);
 scrollView.add(labMap);
-scrollView.add(map);
 scrollView.add(spacer);
 scrollView.add(mapDet);
 win.add(scrollView);
@@ -136,8 +140,9 @@ var annot = Titanium.Map.createAnnotation({
     pincolor:Titanium.Map.ANNOTATION_RED,
     animate:true,
 });
-
-map.addAnnotation(annot);
+if(Ti.Platform.name != 'android'){
+    map.addAnnotation(annot);
+}
 mapDet.addEventListener("click", function(e) {
 
 	var style = Ti.UI.iPhone.MODAL_TRANSITION_STYLE_PARTIAL_CURL;

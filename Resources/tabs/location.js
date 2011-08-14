@@ -76,11 +76,14 @@ var mapview = Titanium.Map.createView({
 
 var updateLocation = function(){
 	Titanium.Geolocation.getCurrentPosition(function(e)
-		{			
-			var longitude = e.coords.longitude;
-			var latitude = e.coords.latitude;				
-			currentRegion = {latitude:latitude, longitude:longitude, latitudeDelta:FACTOR, longitudeDelta: FACTOR};
-			drawRegion();
+		{
+			Ti.API.log("info", e.error);
+			if(e.coords != null){
+				var longitude = e.coords.longitude;
+				var latitude = e.coords.latitude;				
+				currentRegion = {latitude:latitude, longitude:longitude, latitudeDelta:FACTOR, longitudeDelta: FACTOR};
+				drawRegion();
+			}
 		}
 	);
 };
