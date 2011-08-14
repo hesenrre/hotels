@@ -1,349 +1,281 @@
 var FACTOR = 0.0093;
 hotels=[
-{
-	id: 6,
-	name:'Camino Real - Mexico City',
-	header: 'C',
-	stars:4,
-	pool:false,
-	parking:true,
-	address:'Mariano Escobedo 700, Col Anzures Mexico City, DF 11590 México',
-	telephone:'533776655',
-	latitude:19.427663,
-	longitude:-99.17941,
-	image:'/images/Camino_real.jpg',
-	thumbnail:'../images/Camino_real.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:2157
-	},{
-		room:'double',
-		price:2500
-	}]
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"CALZ. TLALPAN NO. 1507 COL PORTALES, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-2595-2595",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"C",
+	"latitude":19.3627,
+	"name":"Holiday Inn - MEXICO COYOACAN",
+	"stars":4,
+	"id":6,
+	"longitude":-99.1395
 },
-{
-	id: 10,
-	name:'Casa Castelar',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Emilio Castelar # 34 (esquina Galileo) Colonia Polanco Mexico City, DF 11560 México',
-	telephone:'12376655',
-	latitude:19.429747,
-	longitude:-99.196694,
-	image:'/images/Casa_castelar.jpg',
-	thumbnail:'../images/Casa_castelar.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1307
-	},{
-		room:'double',
-		price:1500
-	}]
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"ROBERTO FULTON 2-A AVE., TLALNEPANTLA,MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-1164 1164",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"C",
+	"latitude":19.5389,
+	"name":"Crowne Plaza - MEXICO CITY NORTH-TLALNEPANTLA",
+	"stars":4,
+	"id":15,
+	"longitude":-99.2032
 },
-
-{
-	id: 13,
-	name:'Cityexpress Ciudad de Mexico Insurgentes Sur',
-	stars:2,
-	pool:false,
-	parking:true,
-	address:'Insurgentes Sur 1581 Mexico City, DF México',
-	telephone:'12376655',
-	latitude:19.364403,
-	longitude:-99.181985,
-	image:'/images/Cityexpress_insurgentes_sur.jpg',
-	thumbnail:'../images/Cityexpress_insurgentes_sur.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:906
-	},{
-		room:'double',
-		price:1100
-	}]
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_4_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_4_B.jpg",
+	"address":"DAKOTA : 95, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"C",
+	"latitude":19.3958,
+	"name":"Crowne Plaza - HOTEL DE MEXICO",
+	"stars":4,
+	"id":14,
+	"longitude":-99.175
 },
-
-{
-	id: 11,
-	name:'Citysuites Ciudad de Mexico Anzures',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Leibniz 120 Col Anzures Mexico City, DF 11590 México',
-	telephone:'12376655',
-	latitude:19.42913,
-	longitude:-99.178251,
-	image:'/images/Citisuites.jpg',
-	thumbnail:'../images/Citisuites.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1547
-	},{
-		room:'double',
-		price:1800
-	}]
-},{
-	id: 3,
-	name:'Crowne Plaza Hotel',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Dakota #95 Esq. Altadena, Colonia Napoles',
-	telephone:'52767400',
-	latitude:19.396112,
-	longitude:-99.174442,
-	image:'/images/cp_wtc.jpg',
-	thumbnail:'../images/cp_wtc.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1400
-	},{
-		room:'double',
-		price:1500
-	}]
- },{
-	id: 2,
-	name:'Fiesta Inn Centro Historico',
-	header: 'F',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Av. Juárez 76 / José Azueta 27 C Col. Centro',
-	telephone:'52767400',
-	latitude:19.435003,
-	longitude:-99.146832,
-	image:'/images/ALA_fiestainn_ciudadmexico_hotel.jpg',
-	thumbnail:'../images/ALA_fiestainn_ciudadmexico_hotel.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1400
-	},{
-		room:'double',
-		price:1500
-	}]
-},{
-	id: 12,
-	name:'Fiesta Inn Insurgentes Sur',
-	stars:4,
-	pool:false,
-	parking:true,
-	address:'Mercaderes #20 Col San Jose Insurgentes Mexico City, DF 03900 México',
-	telephone:'12376655',
-	latitude:19.363988,
-	longitude:-99.18339,
-	image:'/images/Fiesta_inn_insurgentes_sur.jpg',
-	thumbnail:'../images/Fiesta_inn_insurgentes_sur.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1049
-	},{
-		room:'double',
-		price:1300
-	}]
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"VIADUCTO RIO DE LA PIEDAD : 260, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-50360990",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"D",
+	"latitude":19.406,
+	"name":"Holiday Inn - MEXICO DALI AIRPORT",
+	"stars":4,
+	"id":7,
+	"longitude":-99.1192
+},
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"PUENTE DE PIEDRA : 150, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-54249400",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"M",
+	"latitude":19.29731,
+	"name":"Holiday Inn Hotel & Suites - MEXICO MEDICA SUR",
+	"stars":4,
+	"id":8,
+	"longitude":-99.15244
+},
+{	"pool":false,
+	"image":"../images/RSTLN_LNGE_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/RSTLN_LNGE_1_B.jpg",
+	"address":"GUSTAVO BAZ BLVD 4873, TLALNEPANTLA, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-53215191",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"P",
+	"latitude":19.58397,
+	"name":"Holiday Inn - CIUDAD DE MEXICO PERINORTE",
+	"stars":4,
+	"id":9,
+	"longitude":-99.203042
 },
 
-{
-	id: 1,
-	name:'Fiesta Inn Viaducto',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Av. Insurgentes Sur 553, Col. Escandon, Benito Juarez, México DF',
-	telephone:'52767400',
-	latitude:19.40019,
-	longitude:-99.170778,
-	image:'/images/INS_fiestainn_ciudadmexico_hotel.jpg',
-	thumbnail:'../images/INS_fiestainn_ciudadmexico_hotel.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1400
-	},{
-		room:'double',
-		price:1500
-	}]
-},{
-id: 4,
-	name:'Holiday Inn Express WTC',
-	header: 'H',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Dakota #95 Col. Napoles',
-	telephone:'52767400',
-	latitude:19.395566,
-	longitude:-99.174775,
-	image:'/images/hie_wtc.jpg',
-	thumbnail:'../images/hie_wtc.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1400
-	 },{
-		 room:'double',
-		 price:1500
-	 }]
-},{
-	id: 8,
-	name:'JW Marriott Hotel Mexico City',
-	header: 'J',
-	stars:5,
-	pool:false,
-	parking:true,
-	address:'Andres Bello No 29 Mexico City, DF 11560 México',
-	telephone:'12376655',
-	latitude:19.426702,
-	longitude:-99.194977,
-	image:'/images/JW_marriot_mexico.jpg',
-	thumbnail:'../images/JW_marriot_mexico.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1641
-	},{
-		room:'double',
-		price:2000
-	}]
+{	"pool":false,
+	"image":"../images/WELCM_FDSK_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_FDSK_1_B.jpg",
+	"address":"PARROQUIA : 1056, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-91837700",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"P",
+	"latitude":19.36851,
+	"name":"Holiday Inn - MEXICO CITY-PLAZA UNIVERSIDAD",
+	"stars":4,
+	"id":3,
+	"longitude":-99.1663
+},
+{	"pool":false,
+	"image":"../images/WELCM_ENTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_ENTR_1_B.jpg",
+	"address":"CAMPOS ELISEOS 218, MEXICO CITY,MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-53277700",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"H",
+	"latitude":19.4281,
+	"name":"InterContinental - PRESIDENTE MEXICO CITY",
+	"stars":4,
+	"id":13,
+	"longitude":-99.1932
 },
 
-{
-	id: 3,
-	name:'Las Suites',
-	header: 'L',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Campos Eliseos 470 Mexico City, DF 11560 México',
-	telephone:'52776655',
-	latitude:19.430577,
-	longitude:-99.205395,
-	image:'/images/Las_Suites.jpg',
-	thumbnail:'../images/Las_Suites.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1383
-	},{
-		room:'double',
-		price:1500
-	}]
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"DAKOTA # 95, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-11641160",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"W",
+	"latitude":19.396122,
+	"name":"Holiday Inn Express Hotel & Suites - MEXICO CITY AT THE WTC",
+	"stars":4,
+	"id":10,
+	"longitude":-99.174249
 },
-{
-	id: 5,
-	name:'Nikko Mexico',
-	header: 'N',
-	stars:4,
-	pool:false,
-	parking:true,
-	address:'Campos Eliseos 204 Colonia Polanco Mexico City, DF 11560 México',
-	telephone:'533776655',
-	latitude:19.427744,
-	longitude:-99.192617,
-	image:'/images/Nikko_mexico.jpg',
-	thumbnail:'../images/Nikko_mexico.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:2157
-	},{
-		room:'double',
-		price:2500
-	}]
+{	"pool":false,
+	"image":"../images/GROOM_ROOM_2_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/GROOM_ROOM_2_B.jpg",
+	"address":"PASEO DE LA REFORMA #208, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-91505900",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"R",
+	"latitude":19.4307,
+	"name":"Holiday Inn Express - MEXICO REFORMA",
+	"stars":4,
+	"id":11,
+	"longitude":-99.16
 },
-{
-	id: 9,
-	name:'Presidente InterContinental Mexico City',
-	header: 'P',
-	stars:5,
-	pool:false,
-	parking:true,
-	address:'Campos Eliseos 218 Mexico City, DF 11560 México',
-	telephone:'12376655',
-	latitude:19.427238,
-	longitude:-99.193947,
-	image:'/images/Presidente_intercontinental.jpg',
-	thumbnail:'../images/Presidente_intercontinental.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1395
-	},{
-		room:'double',
-		price:1500
-	}]
-},{
-	id: 7,
-	name:'Residencia Polanco',
-	header: 'R',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Newton #273, col. Granada, Miguel Hidalgo, México DF',
-	telephone:'11234567',
-	latitude:19.4368,
-	longitude:-99.1847,
-	image:'/images/residencialpolanco.png',
-	thumbnail:'../images/residencialpolanco.png',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:400
-	},{
-		room:'double',
-		price:500
-	}]
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"DAKOTA # 95, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"H",
+	"latitude":19.396122,
+	"name":"Holiday Inn Express Hotel & Suites - MEXICO CITY AT THE WTC",
+	"stars":4,
+	"id":10,
+	"longitude":-99.174249
 },
-{
-	id: 7,
-	name:'W Mexico City',
-	header: 'W',
-	stars:5,
-	pool:false,
-	parking:true,
-	address:'Campos Eliseos 252 Chapultepec Mexico City, DF 11560 México',
-	telephone:'533776655',
-	latitude:19.427633,
-	longitude:-99.194875,
-	image:'/images/W_mexico_city.jpg',
-	thumbnail:'../images/W_mexico_city.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1641
-	},{
-		room:'double',
-		price:2000
-	}]
+{	"pool":false,
+	"image":"../images/GROOM_ROOM_2_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/GROOM_ROOM_2_B.jpg",
+	"address":"PASEO DE LA REFORMA #208, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"R",
+	"latitude":19.4307,
+	"name":"Holiday Inn Express - MEXICO REFORMA",
+	"stars":4,
+	"id":11,
+	"longitude":-99.16
+},
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_04_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_04_B.jpg",
+	"address":"GUILLERMO GONZALEZ CAMARENA 1400, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-555-2452870",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"S",
+	"latitude":19.364558,
+	"name":"Holiday Inn Express - MEXICO SANTA FE",
+	"stars":4,
+	"id":12,
+	"longitude":-99.265114
+},
+
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"SAN LUIS TLATILCO #2, NAUCALPAN, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-53129760",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"T",
+	"latitude":19.46525,
+	"name":"Holiday Inn - MEXICO TOREO-SATELITE",
+	"stars":4,
+	"id":5,
+	"longitude":-99.23886
+},
+{	"pool":false,
+	"image":"../images/WELCM_HVEW_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_HVEW_1_B.jpg",
+	"address":"AVE. REVOLUCION #583, MEXICO CITY,MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-52789950",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"T",
+	"latitude":19.387755,
+	"name":"Holiday Inn - CIUDAD DE MEXICO-TRADE CENTER",
+	"stars":4,
+	"id":1,
+	"longitude":-99.186363
+},
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"DAKOTA # 95, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"W",
+	"latitude":19.396122,
+	"name":"Holiday Inn Express Hotel & Suites - MEXICO CITY AT THE WTC",
+	"stars":4,
+	"id":10,
+	"longitude":-99.174249
+},
+
+{	"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"AV. CINCO DE MAYO : 61, MEXICO CITY, MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"2-55-51305130",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"Z",
+	"latitude":19.433895,
+	"name":"Holiday Inn - MEXICO ZOCALO",
+	"stars":4,
+	"id":4,
+	"longitude":-99.134348
+},
+{"pool":false,
+	"image":"../images/WELCM_EXTR_1_B.jpg",
+	"parking":true,
+	"thumbnail":"../images/WELCM_EXTR_1_B.jpg",
+	"address":"LONDRES : 15, MEXICO CITY D. F., MEXICO",
+	"paymethods":["VISA","MASTERCARD"],
+	"telephone":"52-55-51416020",
+	"prices":[{"price":2157,"room":"single"},{"price":2500,"room":"double"}],
+	"header":"Z",
+	"latitude":19.4286,
+	"name":"Holiday Inn Hotel & Suites - MEXICO ZONA ROSA",
+	"stars":4,
+	"id":2,
+	"longitude":-99.1586
 }
-,     
-{
-	id: 4,
-	name:'Wyndham Garden Mexico City Polanco',
-	stars:3,
-	pool:false,
-	parking:true,
-	address:'Leon Tolstoi 22 Mexico City, DF 11590 México',
-	telephone:'52776655',
-	latitude:19.425235,
-	longitude:-99.176695,
-	image:'/images/Wyndham_garden.jpg',
-	thumbnail:'../images/Wyndham_garden.jpg',
-	paymethods:['VISA','MASTERCARD'],
-	prices:[{
-		room:'single',
-		price:1063
-	},{
-		room:'double',
-		price:1300
-	}]
-}];
+
+];
 
 var searchById = function(id){
 	for(var i=0; i < hotels.length; i++){
