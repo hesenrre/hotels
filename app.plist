@@ -11,19 +11,19 @@
 					<key>kind</key>
 					<string>software-package</string>
 					<key>url</key>
-					<string>http://hesenrre.github.com/hotels/Cielito.ipa</string>
+					<string>http://hesenrre.github.com/hotels/Hotel.ipa</string>
 				</dict>
 			</array>
 			<key>metadata</key>
 			<dict>
 				<key>bundle-identifier</key>
-				<string>com.jwm</string>
+				<string>com.rooninlabs</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>subtitle</key>
-				<string>Cielito</string>
+				<string>HolidayInn</string>
 				<key>title</key>
-				<string>Cielito</string>
+				<string>HolidayInn</string>
 			</dict>
 		</dict>
 	</array>
